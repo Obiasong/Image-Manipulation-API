@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('type', 25);
             $table->text('data');
             $table->string('output_path', 2000);
-            $table->foreignIdFor(\App\Models\User::class, 'Users_id');
+            $table->foreignIdFor(\App\Models\User::class, 'Users_id')->nullable();
             $table->foreignIdFor(\App\Models\Album::class, 'Albums_id');
             $table->timestamps();
         });
