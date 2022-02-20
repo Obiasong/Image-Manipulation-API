@@ -14,6 +14,12 @@ class AlbumResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            "id" => $this->id,
+            "name" => $this->name,
+            "creator"=>$this->Users_id,
+            "created_date" => ($this->created_at)->format('Y-m-d H:i:s'),
+            "last_updated" => ($this->updated_at)->format('Y-m-d H:i:s')
+        ];
     }
 }
